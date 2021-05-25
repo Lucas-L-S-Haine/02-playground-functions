@@ -18,7 +18,7 @@ function splitSentence(sentence) {
     }
   }
   divisions.push(sentence.length);
-    let phrases = {};
+  let phrases = {};
   for (let index = 0; index < divisions.length; index += 2) {
     phrases[index] = sentence.slice(divisions[index], divisions[index + 1]);
   }
@@ -30,18 +30,29 @@ function splitSentence(sentence) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(fullName) {
+  let name = [];
+  name.push(fullName[0]);
+  name.unshift(fullName[fullName.length-1]);
+  return name[0] + ', ' + name[1];
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  return 3 * wins + ties;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numbers) {
+  let maximum = -Infinity;
+  let count = 0;
+  for (let index = 0; index < numbers.length; index += 1) {
+    maximum = Math.max(maximum, numbers[index]);
+  }
+  for (let index = 0; index < numbers.length; index += 1) {
+    count += numbers[index] === maximum ? 1 : 0;
+  }
+  return count;
 }
 
 // Desafio 7
