@@ -5,30 +5,27 @@ function compareTrue(logical1, logical2) {
 
 // Desafio 2
 function calcArea(base, height) {
-  return (base*height)/2;
+  return (base * height) / 2;
 }
 
 // Desafio 3
 function splitSentence(sentence) {
   let divisions = [0];
-  for (let letter = 0; letter < sentence.length; letter += 1){
-    if (sentence[letter] === ' '){
+  for (let letter = 0; letter < sentence.length; letter += 1) {
+    if (sentence[letter] === ' ') {
       divisions.push(letter);
-      divisions.push(letter+1);
+      divisions.push(letter + 1);
     }
   }
   divisions.push(sentence.length);
-  
-  let phrases = {};
-  for (let index = 0; index < divisions.length; index += 2){
-    phrases[index] = sentence.slice(divisions[index],divisions[index+1])
+    let phrases = {};
+  for (let index = 0; index < divisions.length; index += 2) {
+    phrases[index] = sentence.slice(divisions[index], divisions[index + 1]);
   }
-
   let finalSentence = [];
-  for (key in phrases){
+  for (let key in phrases) {
     finalSentence.push(phrases[key]);
   }
-
   return finalSentence;
 }
 
