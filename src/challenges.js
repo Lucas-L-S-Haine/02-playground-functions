@@ -101,11 +101,59 @@ function fizzBuzz(numbers) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(text) {
+  let code = '';
+  for (let index = 0; index < text.length; index += 1) {
+    if (text[index] === 'a') {
+      code += 1;
+    } else {
+      if (text[index] === 'e') {
+        code += 2;
+      } else {
+        if (text[index] === 'i') {
+          code += 3;
+        } else {
+          if (text[index] === 'o') {
+            code += 4;
+          } else {
+            if (text[index] === 'u') {
+              code += 5;
+            } else {
+              code += text[index];
+            }
+          }
+        }
+      }      
+    }
+  }
+  return code;
 }
-function decode() {
-  // seu código aqui
+function decode(text) {
+  let code = '';
+  for (let index = 0; index < text.length; index += 1) {
+    if (text[index] === '1') {
+      code += 'a';
+    } else {
+      if (text[index] === '2') {
+        code += 'e';
+      } else {
+        if (text[index] === '3') {
+          code += 'i';
+        } else {
+          if (text[index] === '4') {
+            code += 'o';
+          } else {
+            if (text[index] === '5') {
+              code += 'u';
+            } else {
+              code += text[index];
+            }
+          }
+        }
+      }      
+    }
+  }
+  return code;
 }
 
 module.exports = {
