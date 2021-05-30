@@ -15,11 +15,36 @@ function techList(tech, name) {
     }
 }
 
-console.log(techList([], 'Lucas'));
-
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(numbers) {
+  let sizeError = false;
+  let valueError = false;
+  let telephoneNumber = '(' + numbers[0] + numbers[1] + ') ' +
+    numbers[2] + numbers[3] + numbers[4] + numbers[5] + numbers[6] +
+    '-' + numbers[7] + numbers[8] + numbers[9] + numbers[10];
+  for (let index = 0; index < numbers.length; index += 1) {
+    valueError = numbers[index] > 9 ? true :
+    numbers[index] < 0 ? true : valueError;
+  }
+  for (let value = 0; value < 10; value += 1) {
+    let repeats = 0;
+    for (let index = 0; index < numbers.length; index += 1) {
+      repeats += 1 * (value == numbers[index]);
+    }
+    if (repeats >= 3) {
+      valueError = true;
+    }
+  }
+  if (numbers.length !== 11) {
+    sizeError = true;
+  }
+  if (sizeError) {
+    return 'Array com tamanho incorreto.';
+  } else if (valueError) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  } else {
+    return telephoneNumber;
+  }
 }
 
 // Desafio 12
